@@ -1,91 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+/* Melhor importar fontes no html */
 
-*{
+* {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	font-family: 'Inter';
 	user-select: none;
+
+	/* Como a maior parte do texto do site é branco já define o branco como a cor base */
+	color: #fff;
 }
 
-body{
-	display: grid;
-	align-content: space-around;
-	justify-content: space-around;
-	align-items: stretch;
+body {
+	/* Flex simplifica */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	width: 100vw;
 	height: 100vh;
-	background-color: hsl(233, 47%, 7%);  /* Very dark blue (main background) */
-	border-radius: 7px;
+	background-color: hsl(233, 47%, 7%);
+	/* border-radius: 7px; "Já olhou pra alguém e pensou 'o que se passa na cabeça dela ?'". Nunca tinha visto alguem colocar border-radius no body kkkkkkkk. Desculpa mas dessa ru ri kkkkkk */
 }
 
-#main{
-	position: relative;
-	display: grid;
-	grid-template-areas: 
-		'titulo titulo titulo'
-		'desc desc desc'
-		's1 s2 s3';
-	background-color: hsl(244, 38%, 16%);  /* Dark desaturated blue (card background): hsl(244, 38%, 16%) */
+main {
+	background-color: hsl(244, 38%, 16%);
 	border-radius: 7px 0 0 7px;
-}
 
-#texts{
+	/* Flex nesse caso facilita sua vida */
 	display: flex;
-	position: relative;
-	flex-direction: column;
-	float: left;
-	padding: 1em;
-	margin: 3em 4em 3em 3em;
+	width: 80vw;
 }
 
-.titulo{
-	grid-area: titulo;
-	display: block;
-	padding: 0;
-	margin-bottom: .8em;
+#content {
+	display: flex;
+	flex-direction: column;
+
+	/* Padding resolve tudo */
+	padding: 6%;
+
+	font-size: 16px;
+}
+
+h1 {
+	margin-bottom: 0.8em;
 	text-align: left;
 	color: #fff;
-	font-size: 40px;
+	font-size: 42px;
 	font-weight: bold;
 }
-.titulo span{
-	margin: 0;
-	padding: 0;
-	color: hsl(277, 64%, 61%);  /* Soft violet (accent): hsl(277, 64%, 61%) */
+h1 > span {
+	color: hsl(277, 64%, 61%);
 }
 
-.descricao{
-	grid-area: desc;
+.description {
 	color: hsla(0, 0%, 100%, 0.6);
 }
 
-.stats{
-	display: grid;
-	margin-top: 4em;
-	grid-template-rows: 50% 50%;
-	grid-template-columns: 33% 33% 34%;
-	grid-column-gap: 1em;
-	grid-row-gap: 0.5em;
+.stats {
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+	gap: 3rem;
+	margin-top: 3rem;
 }
 
-.p{
-	color: #fff;
+.stats div > p {
 	font-weight: bold;
-	font-size: 150%;
-}
-.d{
-	color: hsla(0, 0%, 100%, 0.5);
-	font-size: 90%;
-	font-weight: normal;
-	font-family: 'Lexend Deca';
+	font-size: 24px;
 }
 
-#image{
-	display: block;
-	width: 490px;
-	height: 100%;
-	background-image: url("foto.PNG");
-	background-size: 110%;
+.stats div > span {
+	color: hsla(0, 0%, 100%, 0.5);
+	font-family: 'Lexend Deca';
+	text-transform: uppercase;
+	line-height: 2;
+	font-size: 14px;
+}
+#image {
+	background-image: url('foto.PNG');
+	background-size: cover;
 	border-radius: 0 7px 5px 0;
+
+	min-width: 45%;
 }
