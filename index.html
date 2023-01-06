@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Stats preview card component</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-	<main id="main">
-		<div id="texts">
-			<p class="titulo">Get <span>insights</span> that help <br> your business grow.</p>
-			<span class="descricao">
-				Discover the benefits of data analytics and make
-				<br>
-				better decisions regarding revenue, customer
-				<br>
-				experience and overall efficiency.
-			</span>
-			<div class="stats">
-				<p class="p">10k+</p>
-				<p class="p">314</p>
-				<p class="p">12M+</p>
-				<span class="p d">COMPANIES</span>
-				<span class="p d">TEMPLATES</span>
-				<span class="p d">QUERIES</span>
-			</div>
-		</div>
-
-		<div id="image"></div>
-	</main>
-
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- Importar as fontes aqui é melhor -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Stats preview card component</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<!-- Cuidado com o código bilingue. Enfia tudo no google tradutor. -->
+		<!-- Você pode selecionar main diretamente pela tag já que só existe uma no html -->
+		<main>
+			<!-- só pra fins de semântica, troquei a div pra section (mas não muda nada) -->
+			<section id="content">
+				<!-- semântica: isso é o h1 da página -->
+				<h1>Get <span>insights</span> that help your business grow.</h1>
+				<!-- semantica: parágrafo acho que se encaixaria melhor -->
+				<!-- Deixe a quebra de linha por conta do navegador quando for necessário. Não se quebra parágrafo no meio a menos que seja necessário. -->
+				<p class="description">
+					Discover the benefits of data analytics and make better decisions
+					regarding revenue, customer experience and overall efficiency.
+				</p>
+				<div class="stats">
+					<!-- Semantica: as divs servem pra agrupar. Agrupa os elementos. Mesmo que fosse pra usar grid era bom agrupar nesse caso. -->
+					<!-- Não precisa escrever em maiusculo. Define isso como um estilo no css. -->
+					<div>
+						<p>10k+</p>
+						<span>Companies</span>
+					</div>
+					<div>
+						<p>314</p>
+						<span>Templates</span>
+					</div>
+					<div>
+						<p>12M+</p>
+						<span>Queries</span>
+					</div>
+				</div>
+			</section>
+			<!-- Só mudei pra section por fins de semantica -->
+			<section id="image" />
+		</main>
+	</body>
 </html>
