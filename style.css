@@ -16,9 +16,9 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	width: 100vw;
 	height: 100vh;
+	padding: 10%;
 	background-color: hsl(233, 47%, 7%);
 	/* border-radius: 7px; "Já olhou pra alguém e pensou 'o que se passa na cabeça dela ?'". Nunca tinha visto alguem colocar border-radius no body kkkkkkkk. Desculpa mas dessa ru ri kkkkkk */
 }
@@ -29,7 +29,6 @@ main {
 
 	/* Flex nesse caso facilita sua vida */
 	display: flex;
-	width: 80vw;
 }
 
 #content {
@@ -83,4 +82,44 @@ h1 > span {
 	border-radius: 0 7px 5px 0;
 
 	min-width: 45%;
+}
+
+@media (max-width: 1000px) {
+	main {
+		flex-direction: column-reverse;
+	}
+
+	#image {
+		width: 100%;
+		min-height: 300px;
+	}
+}
+
+@media (max-width: 556px) {
+	#content {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.stats {
+		align-items: center;
+		flex-direction: column;
+	}
+	h1 {
+		font-size: 32px;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	.description {
+		text-align: center;
+	}
+
+	.stats div > p,
+	span {
+		text-align: center;
+	}
+
+	#image {
+		min-height: 150px;
+	}
 }
